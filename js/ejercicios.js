@@ -4,8 +4,8 @@ while (base != 0) {
     while (exp < 0) {
     exp = parseInt(prompt("Ingrese un exponente positivo."));
     }
-    let aux = base;
-    for (let i = 0; i < exp-1; i++) {
+    let aux = 1;
+    for (let i = 0; i < exp; i++) {
         aux = aux*base;
     }
     alert("El resultado es: " + aux)
