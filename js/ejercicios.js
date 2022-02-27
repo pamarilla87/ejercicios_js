@@ -1,14 +1,23 @@
-let exp = -1;
-let base = parseInt(prompt("Vamos a calcular una potencia. Ingrese la base o 0 para salir"));
-while (base != 0) {
-    while (exp < 0) {
-    exp = parseInt(prompt("Ingrese un exponente positivo."));
+//Calcular año bisiesto
+let anio = 0;
+
+anio = parseInt(prompt("Ingrese el año para saber si es bisiesto.\n" +  "Ingrese -1 para salir"));
+
+while (anio != -1) {
+    if (calcularBisiesto(anio))
+        alert(anio + " es año bisiesto")
+    else
+        alert(anio + " no es año bisiesto");
+    anio = parseInt(prompt("Ingrese el año para saber si es bisiesto.\n" +  "Ingrese -1 para salir"));
+}
+
+
+function calcularBisiesto(numeroAnio) {
+    let bisiesto = false;
+    if (numeroAnio % 4 == 0) {
+        if (numeroAnio % 100 != 0 || numeroAnio % 400 == 0) {
+            bisiesto = true;
+        }
     }
-    let aux = 1;
-    for (let i = 0; i < exp; i++) {
-        aux = aux*base;
-    }
-    alert("El resultado es: " + aux)
-    base = parseInt(prompt("Vamos a calcular una potencia. Ingrese la base o 0 para salir"));
-    exp= -1;
+    return bisiesto;
 }
